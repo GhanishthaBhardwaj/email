@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Haritaki Care | Elegant Caregiver Network</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --sakura: #e8b4b8;
+  --sakura-dark: #c97e8a;
+  --plum-rich: #6d3b6e;
+  --plum-soft: #a97c9e;
+  --cream: #fff9f0;
+  --ivory: #fef7e8;
+  --charcoal: #2c2a2e;
+  --gold-soft: #e9bc7d;
+  --shadow-elegant: 0 25px 45px -12px rgba(0, 0, 0, 0.2), 0 2px 8px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 35px 55px -18px rgba(109, 59, 110, 0.3);
+  --transition-butter: cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background: linear-gradient(125deg, #fffaf3 0%, #fdf3e8 100%);
+  color: var(--charcoal);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ========== INTENSE SHOWERING DOTS BACKGROUND ========== */
+.dots-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.dot-particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform;
+  animation: floatShower linear infinite;
+}
+
+/* Multi-color dots for extra magic */
+.dot-particle.variant-1 {
+  background: radial-gradient(circle, rgba(201, 126, 138, 0.7) 0%, rgba(109, 59, 110, 0.4) 100%);
+  box-shadow: 0 0 4px rgba(201,126,138,0.3);
+}
+.dot-particle.variant-2 {
+  background: radial-gradient(circle, rgba(233, 188, 125, 0.65) 0%, rgba(201, 126, 138, 0.35) 100%);
+  box-shadow: 0 0 3px rgba(233,188,125,0.4);
+}
+.dot-particle.variant-3 {
+  background: radial-gradient(circle, rgba(255, 215, 180, 0.7) 0%, rgba(169, 124, 158, 0.4) 100%);
+  box-shadow: 0 0 5px rgba(255,215,180,0.3);
+}
+.dot-particle.variant-4 {
+  background: radial-gradient(circle, rgba(124, 58, 110, 0.55) 0%, rgba(201, 126, 138, 0.45) 100%);
+}
+
+@keyframes floatShower {
+  0% {
+    transform: translateY(-15vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.7;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(115vh) translateX(var(--drift, 35px)) rotate(380deg);
+    opacity: 0;
+  }
+}
+
+/* Sparkle effect on hover for cards */
+.card-luxe {
+  transition: all 0.4s var(--transition-butter);
+}
+
+/* content wrapper to sit above dots */
+.content-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+/* hero section — warm gradient */
+.hero-grace {
+  background: linear-gradient(115deg, #7b4b6e 0%, #b47c9e 50%, #e3b3c2 100%);
+  border-radius: 0 0 70px 70px;
+  position: relative;
+  overflow: hidden;
+  padding: 0 28px 64px;
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-grace::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(255, 235, 210, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.floating-petal {
+  position: absolute;
+  background: rgba(255, 240, 220, 0.3);
+  backdrop-filter: blur(12px);
+  border-radius: 50%;
+  animation: floatSlow 22s infinite ease-in-out;
+}
+
+.petal1 { width: 320px; height: 320px; top: -120px; right: -100px; }
+.petal2 { width: 200px; height: 200px; bottom: -40px; left: -60px; animation-delay: -7s; }
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(6deg); }
+}
+
+.nav-luxe {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 28px 0 24px;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  z-index: 5;
+}
+
+.brand-luxe {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(255, 250, 240, 0.18);
+  backdrop-filter: blur(16px);
+  padding: 6px 24px 6px 18px;
+  border-radius: 80px;
+  border: 1px solid rgba(255, 235, 210, 0.5);
+  transition: transform 0.3s var(--transition-butter);
+}
+
+.brand-luxe:hover {
+  transform: scale(1.02);
+}
+
+.brand-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--cream);
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: #7b4b6e;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.brand-text h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: white;
+  letter-spacing: -0.2px;
+}
+
+.brand-text span {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #ffefdd;
+  letter-spacing: 0.5px;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.btn-velvet {
+  background: rgba(255, 250, 240, 0.15);
+  border: 1px solid rgba(255, 240, 220, 0.6);
+  padding: 10px 26px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s var(--transition-butter);
+  backdrop-filter: blur(4px);
+}
+
+.btn-velvet i {
+  margin-right: 8px;
+}
+
+.btn-velvet:hover {
+  background: rgba(255, 250, 240, 0.35);
+  transform: translateY(-3px);
+  border-color: rgba(255, 245, 220, 0.9);
+}
+
+.btn-primary-velvet {
+  background: white;
+  color: var(--plum-rich);
+  border: none;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary-velvet:hover {
+  background: #fff5ea;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.12);
+}
+
+.hero-content-grace {
+  max-width: 1300px;
+  margin: 20px auto 0;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 600;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.hero-title em {
+  font-style: italic;
+  background: linear-gradient(135deg, #ffe6c7, #ffd6a5);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-sub {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 250, 240, 0.92);
+  max-width: 550px;
+  margin: 0 auto 32px;
+}
+
+.stats-grace {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  flex-wrap: wrap;
+  margin-bottom: 38px;
+}
+
+.stat-grace-card {
+  background: rgba(255, 245, 235, 0.18);
+  backdrop-filter: blur(12px);
+  padding: 8px 28px;
+  border-radius: 60px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  transition: all 0.3s;
+}
+
+.stat-number {
+  font-weight: 800;
+  font-size: 1.9rem;
+  color: #fff2e2;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffe5cf;
+}
+
+.search-elegant {
+  background: rgba(255, 255, 250, 0.96);
+  border-radius: 80px;
+  padding: 6px;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.search-field-elegant {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fefaf5;
+  border-radius: 70px;
+  padding: 12px 22px;
+  transition: all 0.25s;
+  border: 1px solid transparent;
+}
+
+.search-field-elegant:focus-within {
+  border-color: var(--sakura-dark);
+  background: white;
+  box-shadow: 0 0 0 5px rgba(201, 126, 138, 0.2);
+}
+
+.search-field-elegant i {
+  color: var(--plum-rich);
+  font-size: 1rem;
+}
+
+.search-field-elegant input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-weight: 500;
+  font-size: 0.9rem;
+  outline: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.search-btn-elegant {
+  background: var(--plum-rich);
+  border: none;
+  padding: 0 38px;
+  border-radius: 70px;
+  font-weight: 700;
+  color: white;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s var(--transition-butter);
+}
+
+.search-btn-elegant:hover {
+  background: #8b4f7a;
+  transform: scale(0.97);
+}
+
+/* dashboard */
+.dashboard-elegant {
+  max-width: 1300px;
+  margin: 48px auto 70px;
+  padding: 0 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.spec-scroll-elegant {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  align-items: center;
+  border-bottom: 2px solid #f3e5d8;
+  padding-bottom: 14px;
+}
+
+.spec-chip {
+  background: white;
+  border: 1.5px solid #eeddcf;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  color: #5f4b5a;
+}
+
+.spec-chip.active {
+  background: #fae9e3;
+  border-color: var(--sakura-dark);
+  color: var(--plum-rich);
+  box-shadow: 0 4px 12px rgba(109, 59, 110, 0.1);
+  transform: translateY(-2px);
+}
+
+.filter-bar-elegant {
+  background: white;
+  border-radius: 28px;
+  padding: 12px 24px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f3e3d4;
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fef8f2;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.filter-item select {
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 0.8rem;
+  outline: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #3f2e3a;
+  cursor: pointer;
+}
+
+.view-toggle-elegant {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+}
+
+.view-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 16px;
+  background: #fdf3ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #b28b9e;
+  border: 1px solid #eeddcf;
+}
+
+.view-btn.active {
+  background: #f0dbd1;
+  border-color: var(--sakura-dark);
+  color: var(--plum-rich);
+  transform: scale(1.02);
+}
+
+.result-header-elegant {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.result-badge {
+  background: white;
+  border-radius: 60px;
+  padding: 6px 24px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  border: 1px solid #f0e1d2;
+}
+
+.sort-elegant {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.sort-elegant select {
+  border: 1px solid #f0e1d2;
+  border-radius: 40px;
+  padding: 8px 20px;
+  background: white;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  cursor: pointer;
+}
+
+/* grid & cards */
+.doctor-grid-elegant {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+
+.doctor-grid-elegant.list-view {
+  grid-template-columns: 1fr;
+}
+
+.card-luxe {
+  background: white;
+  border-radius: 32px;
+  overflow: hidden;
+  transition: all 0.4s var(--transition-butter);
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f5e6db;
+  position: relative;
+}
+
+.card-luxe:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+  border-color: #eacdbb;
+}
+
+.card-accent-gold {
+  height: 5px;
+  background: linear-gradient(90deg, var(--plum-rich), #e2b0a0, #f3cca7);
+}
+
+.card-body-luxe {
+  padding: 22px;
+}
+
+.avatar-section {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 16px;
+}
+
+.avatar-wrapper {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.avatar-img-luxe {
+  width: 84px;
+  height: 84px;
+  border-radius: 28px;
+  object-fit: cover;
+  border: 3px solid #ffe3d4;
+  background: #fae8df;
+  transition: transform 0.3s;
+}
+
+.card-luxe:hover .avatar-img-luxe {
+  transform: scale(1.02);
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 2px;
+  right: 0px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: #2ecc71;
+}
+
+.status-Available { background: #2ecc71; }
+.status-Busy { background: #f39c12; }
+.status-Emergency { background: #e74c3c; }
+
+.doc-title {
+  font-weight: 800;
+  font-size: 1.1rem;
+  letter-spacing: -0.2px;
+  margin-bottom: 2px;
+}
+
+.doc-role {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #b28b9e;
+  margin-bottom: 6px;
+}
+
+.rating-stars-luxe {
+  color: #f4b942;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.spec-pills-luxe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 12px;
+}
+
+.pill-luxe {
+  background: #fcf0e9;
+  padding: 5px 14px;
+  border-radius: 40px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--plum-rich);
+  transition: all 0.2s;
+}
+
+.meta-luxe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #8f7382;
+  margin: 10px 0 6px;
+}
+
+.meta-luxe i {
+  width: 16px;
+  color: var(--sakura-dark);
+}
+
+.card-actions-luxe {
+  display: flex;
+  border-top: 1px solid #f3e2d6;
+  margin-top: 20px;
+}
+
+.action-luxe {
+  flex: 1;
+  text-align: center;
+  padding: 14px 0;
+  font-weight: 700;
+  font-size: 0.75rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s;
+  color: #7c5f6e;
+  text-decoration: none;
+}
+
+.action-luxe.call-luxe {
+  background: var(--plum-rich);
+  color: white;
+  border-radius: 0 0 32px 32px;
+}
+
+.action-luxe.profile-luxe {
+  border-right: 1px solid #f3e2d6;
+}
+
+.action-luxe:hover {
+  background: #fef2ea;
+}
+
+.bookmark-luxe {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: none;
+  cursor: pointer;
+  color: #cfb5c2;
+  transition: all 0.25s;
+  z-index: 3;
+}
+
+.bookmark-luxe.saved {
+  color: #e35f6e;
+  background: #fff1f0;
+  transform: scale(1.05);
+}
+
+/* PROFILE MODAL — LUXURY REDESIGN */
+.modal-luxury {
+  background: #fffef9;
+  border-radius: 44px;
+  border: none;
+  max-width: 680px;
+  width: 92vw;
+  padding: 0;
+  overflow: hidden;
+  box-shadow: 0 35px 65px rgba(0, 0, 0, 0.3);
+  animation: modalFadeIn 0.35s var(--transition-butter);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: scale(0.96) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-luxury::backdrop {
+  background: rgba(44, 42, 46, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.modal-header-lux {
+  background: linear-gradient(115deg, #7b4b6e, #aa7c9a);
+  padding: 24px 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.modal-header-lux h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
+.modal-close {
+  background: rgba(255, 245, 235, 0.25);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  font-size: 1.4rem;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  background: rgba(255, 245, 235, 0.5);
+  transform: rotate(90deg);
+}
+
+.modal-body-elegant {
+  padding: 28px 32px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.profile-hero {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  border-bottom: 2px solid #f7e8df;
+  padding-bottom: 24px;
+}
+
+.profile-avatar-large {
+  width: 112px;
+  height: 112px;
+  border-radius: 36px;
+  object-fit: cover;
+  border: 4px solid var(--sakura-dark);
+  box-shadow: 0 15px 25px -8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s;
+}
+
+.profile-avatar-large:hover {
+  transform: scale(1.02);
+}
+
+.profile-title h3 {
+  font-size: 1.8rem;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  margin-bottom: 6px;
+}
+
+.profile-role {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--sakura-dark);
+  margin-bottom: 8px;
+  display: inline-block;
+  background: #faf0ea;
+  padding: 4px 16px;
+  border-radius: 30px;
+}
+
+.rating-large {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.rating-large i {
+  color: #f4b942;
+}
+
+.contact-info {
+  background: #fef5ef;
+  border-radius: 28px;
+  padding: 18px 22px;
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  transition: all 0.2s;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.contact-item i {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--plum-rich);
+  font-size: 0.9rem;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 20px 0;
+}
+
+.detail-card {
+  background: #fefaf6;
+  border-radius: 24px;
+  padding: 16px;
+  transition: all 0.25s;
+}
+
+.detail-card:hover {
+  background: #fff5ed;
+  transform: translateY(-3px);
+}
+
+.detail-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #b292a4;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.detail-value {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.skill-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 15px 0 20px;
+}
+
+.skill-pill {
+  background: #f1e4db;
+  padding: 8px 20px;
+  border-radius: 40px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6d4b5e;
+  transition: all 0.2s;
+}
+
+.skill-pill:hover {
+  background: var(--sakura-dark);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.bio-text {
+  line-height: 1.6;
+  color: #4f3e48;
+  font-weight: 500;
+  margin: 18px 0 10px;
+  padding: 12px 0;
+  border-top: 1px solid #f0dfd2;
+}
+
+/* toast */
+.toast-elegant {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #2c2a2e;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 60px;
+  font-weight: 600;
+  z-index: 9999;
+  transition: transform 0.3s;
+  backdrop-filter: blur(10px);
+  background: rgba(44, 42, 46, 0.9);
+}
+
+.toast-elegant.show {
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 720px) {
+  .filter-bar-elegant { flex-direction: column; align-items: stretch; }
+  .view-toggle-elegant { margin-left: 0; justify-content: flex-end; }
+  .search-elegant { flex-direction: column; background: transparent; box-shadow: none; }
+  .search-field-elegant { background: white; }
+  .detail-grid { grid-template-columns: 1fr; }
+  .profile-hero { flex-direction: column; align-items: center; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- INTENSE SHOWERING DOTS BACKGROUND - HIGH DENSITY -->
+<div class="dots-bg" id="dotsContainer"></div>
+
+<div class="content-wrapper">
+<div class="hero-grace">
+  <div class="floating-petal petal1"></div><div class="floating-petal petal2"></div>
+  <div class="nav-luxe">
+    <div class="brand-luxe"><div class="brand-icon">🌺</div><div class="brand-text"><h1>Haritaki Care</h1><span>Healing with heart</span></div></div>
+    <div class="nav-actions"><button class="btn-velvet" id="navBookmarkBtn"><i class="fa-regular fa-heart"></i> Saved <span id="bookmarkNavCount">0</span></button><button class="btn-velvet btn-primary-velvet" id="openAddBtn"><i class="fa-regular fa-plus"></i> Add caregiver</button></div>
+  </div>
+  <div class="hero-content-grace"><div class="hero-title">Where compassion meets <em>excellence</em></div><div class="hero-sub">India's most revered caregivers — curated with warmth & expertise</div>
+    <div class="stats-grace"><div class="stat-grace-card"><div class="stat-number" id="statTotal">—</div><div class="stat-label">Experts</div></div><div class="stat-grace-card"><div class="stat-number" id="statCities">—</div><div class="stat-label">Cities</div></div><div class="stat-grace-card"><div class="stat-number" id="statAvailable">—</div><div class="stat-label">Available</div></div><div class="stat-grace-card"><div class="stat-number" id="statAvg">—</div><div class="stat-label">★ Rating</div></div></div>
+    <div class="search-elegant"><div class="search-field-elegant"><i class="fas fa-user-md"></i><input type="text" id="searchName" placeholder="Name, specialty..."></div><div class="search-field-elegant"><i class="fas fa-location-dot"></i><input type="text" id="searchCityField" placeholder="City"></div><button class="search-btn-elegant" id="searchTriggerBtn"><i class="fas fa-search"></i> Find</button></div>
+  </div>
+</div>
+
+<div class="dashboard-elegant">
+  <div class="spec-scroll-elegant" id="specialtyContainer"><div class="spec-chip active" data-spec="all">✨ All</div><div class="spec-chip" data-spec="Elderly Care">👵 Elderly Care</div><div class="spec-chip" data-spec="Post Surgery Care">🩺 Post Surgery</div><div class="spec-chip" data-spec="Home Nursing">🏡 Home Nursing</div><div class="spec-chip" data-spec="Dementia Care">🧠 Dementia</div><div class="spec-chip" data-spec="Palliative Care">💖 Palliative</div><div class="spec-chip" data-spec="Night Care">🌙 Night Care</div></div>
+  <div class="filter-bar-elegant"><div class="filter-item"><i class="fas fa-city"></i><select id="cityFilter"><option value="all">All Cities</option></select></div><div class="filter-item"><i class="fas fa-clock"></i><select id="availFilter"><option value="all">Any status</option><option value="Available">Available now</option><option value="Busy">Busy</option><option value="Emergency">Emergency</option></select></div><div class="filter-item"><i class="fas fa-star"></i><select id="ratingFilter"><option value="0">Any rating</option><option value="4.5">4.5+ ★</option><option value="4">4.0+ ★</option></select></div><div class="view-toggle-elegant"><div class="view-btn active" id="gridViewBtn"><i class="fas fa-th-large"></i></div><div class="view-btn" id="listViewBtn"><i class="fas fa-list-ul"></i></div></div></div>
+  <div class="result-header-elegant"><div class="result-badge"><i class="fa-regular fa-user"></i> <b id="resultCountSpan">0</b> caregivers</div><div class="sort-elegant">Sort by: <select id="sortSelect"><option value="rating">⭐ Highest rated</option><option value="reviews">📝 Most reviews</option><option value="name">🔤 Name A-Z</option><option value="charges">💰 Lowest fee</option></select></div></div>
+  <div class="doctor-grid-elegant" id="doctorsContainer"></div>
+</div>
+<div id="toast" class="toast-elegant"></div>
+
+<!-- MODALS -->
+<dialog id="profileModal" class="modal-luxury"><div class="modal-header-lux"><h2>✨ Caregiver Profile</h2><button class="modal-close" id="closeProfileModal">✕</button></div><div id="profileModalBody" class="modal-body-elegant"></div></dialog>
+<dialog id="bookmarkModal" class="modal-luxury"><div class="modal-header-lux"><h2>❤️ Your cherished healers</h2><button class="modal-close" id="closeBookmarkModal">✕</button></div><div id="bookmarkModalBody" class="modal-body-elegant"></div></dialog>
+
+<dialog id="addModal" class="modal-luxury"><div class="modal-header-lux"><h2>➕ Add a caregiver</h2><button class="modal-close" id="closeAddModal">✕</button></div><div class="modal-body-elegant"><form id="addForm"><input class="search-field-elegant" style="width:100%; margin-bottom:12px;" name="name" placeholder="Full name" required><input class="search-field-elegant" style="width:100%; margin-bottom:12px;" name="phone" placeholder="Phone"><input class="search-field-elegant" style="width:100%; margin-bottom:12px;" name="email" placeholder="Email"><button type="submit" class="search-btn-elegant" style="width:100%; margin-top:12px;">➕ Add profile</button></form></div></dialog>
+</div>
+
+<script>
+// ========== INTENSE SHOWERING DOTS - HIGH DENSITY (180+ DOTS) ==========
+function createIntenseShowerDots() {
+  const container = document.getElementById('dotsContainer');
+  // High amount: 220 dots for dense shower effect
+  const numberOfDots = 220;
+  
+  // Clear any existing dots
+  container.innerHTML = '';
+  
+  for (let i = 0; i < numberOfDots; i++) {
+    const dot = document.createElement('div');
+    dot.classList.add('dot-particle');
+    
+    // Assign random variant for color variation
+    const variant = Math.floor(Math.random() * 4) + 1;
+    dot.classList.add(`variant-${variant}`);
+    
+    // Random size between 2px and 14px (varied sizes)
+    const size = Math.random() * 12 + 2;
+    dot.style.width = `${size}px`;
+    dot.style.height = `${size}px`;
+    
+    // Random horizontal position (full width)
+    dot.style.left = `${Math.random() * 100}%`;
+    
+    // Random animation duration between 5s and 20s (faster for more dynamic feel)
+    const duration = Math.random() * 15 + 5;
+    dot.style.animationDuration = `${duration}s`;
+    
+    // Random delay for staggered effect
+    dot.style.animationDelay = `${Math.random() * 20}s`;
+    
+    // Random horizontal drift value
+    const drift = Math.random() * 80 - 40;
+    dot.style.setProperty('--drift', `${drift}px`);
+    
+    // Add slight rotation variation
+    const rotation = Math.random() * 360;
+    
+    // Custom animation with drift
+    const styleId = `dot-style-${i}`;
+    if (!document.getElementById(styleId)) {
+      const styleSheet = document.createElement('style');
+      styleSheet.id = styleId;
+      styleSheet.textContent = `
+        @keyframes floatShower-${i} {
+          0% {
+            transform: translateY(-15vh) translateX(0) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: ${Math.random() * 0.5 + 0.4};
+          }
+          85% {
+            opacity: ${Math.random() * 0.4 + 0.5};
+          }
+          100% {
+            transform: translateY(115vh) translateX(${drift}px) rotate(${rotation}deg);
+            opacity: 0;
+          }
+        }
+      `;
+      document.head.appendChild(styleSheet);
+      dot.style.animation = `floatShower-${i} ${duration}s linear infinite`;
+      dot.style.animationDelay = `${Math.random() * 20}s`;
+    } else {
+      dot.style.animation = `floatShower-${i} ${duration}s linear infinite`;
+    }
+    
+    container.appendChild(dot);
+  }
+  
+  // Add extra tiny sparkle dots (additional 80 tiny particles)
+  for (let i = 0; i < 80; i++) {
+    const tinyDot = document.createElement('div');
+    tinyDot.classList.add('dot-particle');
+    tinyDot.classList.add('variant-' + (Math.floor(Math.random() * 4) + 1));
+    const tinySize = Math.random() * 3 + 1;
+    tinyDot.style.width = `${tinySize}px`;
+    tinyDot.style.height = `${tinySize}px`;
+    tinyDot.style.left = `${Math.random() * 100}%`;
+    const tinyDuration = Math.random() * 12 + 4;
+    tinyDot.style.animationDuration = `${tinyDuration}s`;
+    tinyDot.style.animationDelay = `${Math.random() * 15}s`;
+    tinyDot.style.opacity = '0.5';
+    const driftVal = Math.random() * 60 - 30;
+    const tinyId = `tiny-style-${i}`;
+    if (!document.getElementById(tinyId)) {
+      const styleSheet = document.createElement('style');
+      styleSheet.id = tinyId;
+      styleSheet.textContent = `
+        @keyframes floatTiny-${i} {
+          0% { transform: translateY(-10vh) translateX(0); opacity: 0; }
+          15% { opacity: 0.6; }
+          100% { transform: translateY(110vh) translateX(${driftVal}px); opacity: 0; }
+        }
+      `;
+      document.head.appendChild(styleSheet);
+      tinyDot.style.animation = `floatTiny-${i} ${tinyDuration}s linear infinite`;
+    } else {
+      tinyDot.style.animation = `floatTiny-${i} ${tinyDuration}s linear infinite`;
+    }
+    container.appendChild(tinyDot);
+  }
+}
+
+// Initialize intense dots when page loads
+createIntenseShowerDots();
+
+// ========== MAIN APPLICATION ==========
+let doctorsList = [], bookmarked = new Set(), activeSpec = "all", viewMode = "grid";
+
+async function loadCSV() { 
+  try { 
+    const r = await fetch(`doctors.csv?t=${Date.now()}`); 
+    if(!r.ok) throw new Error(); 
+    const txt = await r.text(); 
+    const rows = txt.trim().split(/\r?\n/).filter(l=>l.trim()); 
+    if(rows.length<2) throw new Error(); 
+    const headers = rows[0].split(",").map(h=>h.trim().replace(/^"|"$/g,'')); 
+    doctorsList = rows.slice(1).map((row,i)=>{ 
+      let vals = row.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g)||row.split(","); 
+      let obj={}; 
+      headers.forEach((h,j)=>{ obj[h]=(vals[j]||"").trim().replace(/^"|"$/g,''); }); 
+      return { 
+        id: parseInt(obj.id)||i+1, 
+        name: obj.name||"Expert", 
+        role: obj.role||"Caregiver", 
+        rating: parseFloat(obj.rating)||4.2, 
+        reviews: parseInt(obj.reviews)||0, 
+        location: obj.location||"India", 
+        experience: obj.experience||"8+ yrs", 
+        specialization: obj.specialization?obj.specialization.split("|").map(s=>s.trim()):[], 
+        skills: obj.skills?obj.skills.split("|").map(s=>s.trim()):[], 
+        availability: obj.availability||"Available", 
+        charges: obj.charges||"₹950", 
+        chargeNum: parseInt(obj.charges?.replace(/[^0-9]/g,''))||950, 
+        phone: obj.phone||"+91 9876543210", 
+        email: obj.email||"care@example.com", 
+        photo: obj.photo||`https://randomuser.me/api/portraits/${Math.random()>0.5?'women':'men'}/${Math.floor(Math.random()*70)+10}.jpg`, 
+        bio: obj.bio||"Dedicated to holistic healing and patient comfort." 
+      }; 
+    }); 
+    updateStatsAndRender(); 
+  } catch(e) { 
+    fallbackData(); 
+  } 
+}
+
+function fallbackData() { 
+  doctorsList = [
+    { id:1,name:"Dr. Siddharth Mehta",role:"Oncologist",rating:4.9,reviews:567,location:"Mumbai",experience:"22 yrs",specialization:["Oncology","Palliative Care"],skills:["Targeted Therapy","Immunotherapy"],availability:"Available",charges:"₹3800",chargeNum:3800,phone:"+91 98200 99876",email:"siddharth@oncare.in",photo:"https://randomuser.me/api/portraits/men/32.jpg",bio:"Senior oncologist at Tata Hospital Mumbai. Specializes in immunotherapy and compassionate palliative care."},
+    { id:2,name:"Dr. Ananya Verma",role:"Geriatric Specialist",rating:4.8,reviews:342,location:"Delhi",experience:"15 yrs",specialization:["Elderly Care","Dementia Care"],skills:["Memory Support","Fall Prevention"],availability:"Available",charges:"₹2200",chargeNum:2200,phone:"+91 9876543210",email:"ananya@care.in",photo:"https://randomuser.me/api/portraits/women/68.jpg",bio:"Gentle, patient-focused geriatric care with a heart for elders."},
+    { id:3,name:"Dr. Priya Nair",role:"Post Surgery Expert",rating:4.7,reviews:234,location:"Bangalore",experience:"10 yrs",specialization:["Post Surgery Care","Home Nursing"],skills:["Wound Management","Rehab"],availability:"Available",charges:"₹1800",chargeNum:1800,phone:"+91 9988776655",email:"priya@care.in",photo:"https://randomuser.me/api/portraits/women/45.jpg",bio:"Expert in post-operative recovery and home care protocols."},
+    { id:4,name:"Dr. Vikram Singh",role:"Palliative Specialist",rating:4.9,reviews:189,location:"Mumbai",experience:"18 yrs",specialization:["Palliative Care","Elderly Care"],skills:["Pain Management","Emotional Support"],availability:"Available",charges:"₹2500",chargeNum:2500,phone:"+91 8877665544",email:"vikram@care.in",photo:"https://randomuser.me/api/portraits/men/45.jpg",bio:"Bringing comfort and dignity to patients with chronic conditions."}
+  ]; 
+  updateStatsAndRender(); 
+}
+
+function updateStatsAndRender() { 
+  const cities = [...new Set(doctorsList.map(d=>d.location))]; 
+  document.getElementById("statTotal").innerText = doctorsList.length; 
+  document.getElementById("statCities").innerText = cities.length; 
+  document.getElementById("statAvailable").innerText = doctorsList.filter(d=>d.availability==="Available").length; 
+  let avg = (doctorsList.reduce((a,b)=>a+b.rating,0)/doctorsList.length).toFixed(1); 
+  document.getElementById("statAvg").innerHTML = avg+"★"; 
+  let citySel = document.getElementById("cityFilter"); 
+  citySel.innerHTML = '<option value="all">All Cities</option>'+cities.sort().map(c=>`<option>${c}</option>`).join(''); 
+  filterAndRender(); 
+}
+
+function filterAndRender() { 
+  let filtered = [...doctorsList]; 
+  const nameQ = document.getElementById("searchName").value.toLowerCase().trim(); 
+  const cityQ = document.getElementById("searchCityField").value.toLowerCase().trim(); 
+  const cityFil = document.getElementById("cityFilter").value; 
+  const availFil = document.getElementById("availFilter").value; 
+  const ratingMin = parseFloat(document.getElementById("ratingFilter").value)||0; 
+  if(nameQ) filtered = filtered.filter(d=>d.name.toLowerCase().includes(nameQ)||d.role.toLowerCase().includes(nameQ)||d.specialization.some(s=>s.toLowerCase().includes(nameQ))); 
+  if(cityQ) filtered = filtered.filter(d=>d.location.toLowerCase().includes(cityQ)); 
+  if(cityFil!=="all") filtered = filtered.filter(d=>d.location===cityFil); 
+  if(availFil!=="all") filtered = filtered.filter(d=>d.availability===availFil); 
+  filtered = filtered.filter(d=>d.rating>=ratingMin); 
+  if(activeSpec!=="all") filtered = filtered.filter(d=>d.specialization.some(s=>s.toLowerCase().includes(activeSpec.toLowerCase()))); 
+  const sortVal = document.getElementById("sortSelect").value; 
+  if(sortVal==="rating") filtered.sort((a,b)=>b.rating-a.rating); 
+  else if(sortVal==="reviews") filtered.sort((a,b)=>b.reviews-a.reviews); 
+  else if(sortVal==="name") filtered.sort((a,b)=>a.name.localeCompare(b.name)); 
+  else if(sortVal==="charges") filtered.sort((a,b)=>a.chargeNum-b.chargeNum); 
+  renderCards(filtered); 
+  document.getElementById("resultCountSpan").innerText = filtered.length; 
+  document.getElementById("bookmarkNavCount").innerText = bookmarked.size; 
+}
+
+function renderCards(docs) { 
+  const container = document.getElementById("doctorsContainer"); 
+  container.className = `doctor-grid-elegant ${viewMode === "list" ? "list-view" : ""}`; 
+  if(!docs.length){ 
+    container.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:60px;">🌸 No caregivers found — refine your search</div>`; 
+    return; 
+  } 
+  container.innerHTML = docs.map(d=>{ 
+    const saved = bookmarked.has(d.id); 
+    const starFull = "★".repeat(Math.floor(d.rating)) + (d.rating%1>=0.5?"½":"") + "☆".repeat(5-Math.ceil(d.rating)); 
+    const specChips = d.specialization.slice(0,2).map(s=>`<span class="pill-luxe">${s}</span>`).join(''); 
+    return `<div class="card-luxe"><div class="card-accent-gold"></div><button class="bookmark-luxe ${saved ? 'saved' : ''}" onclick="toggleBookmark(${d.id}, event)"><i class="fa-${saved ? 'solid' : 'regular'} fa-heart"></i></button><div class="card-body-luxe"><div class="avatar-section"><div class="avatar-wrapper"><img class="avatar-img-luxe" src="${d.photo}" onerror="this.src='https://randomuser.me/api/portraits/lego/1.jpg'"><span class="status-indicator status-${d.availability}"></span></div><div><div class="doc-title">${d.name}</div><div class="doc-role">${d.role}</div><div class="rating-stars-luxe">${starFull} ${d.rating}</div></div></div><div class="spec-pills-luxe">${specChips || '<span class="pill-luxe">Holistic</span>'}</div><div class="meta-luxe"><i class="fas fa-map-marker-alt"></i> ${d.location} <i class="fas fa-briefcase"></i> ${d.experience} <i class="fas fa-rupee-sign"></i> ${d.charges}</div><div class="card-actions-luxe"><button class="action-luxe profile-luxe" onclick="openProfile(${d.id})"><i class="fas fa-id-card"></i> Profile</button><a class="action-luxe call-luxe" href="tel:${d.phone}"><i class="fas fa-phone-alt"></i> Call</a></div></div></div>`; 
+  }).join(''); 
+}
+
+function openProfile(id) { 
+  const doc = doctorsList.find(d=>d.id===id); 
+  if(!doc) return; 
+  const modalBody = document.getElementById("profileModalBody"); 
+  const starFull = "★".repeat(Math.floor(doc.rating)) + (doc.rating%1>=0.5?"½":"") + "☆".repeat(5-Math.ceil(doc.rating)); 
+  const skillsHtml = doc.skills.length ? doc.skills.map(s=>`<span class="skill-pill">${s}</span>`).join('') : '<span class="skill-pill">General care</span>'; 
+  modalBody.innerHTML = `<div class="profile-hero"><img class="profile-avatar-large" src="${doc.photo}" onerror="this.src='https://randomuser.me/api/portraits/lego/1.jpg'"><div class="profile-title"><h3>${doc.name}</h3><div class="profile-role">${doc.role}</div><div class="rating-large"><i class="fas fa-star"></i> ${doc.rating} (${doc.reviews} reviews) ${starFull}</div></div></div><div class="contact-info"><div class="contact-item"><i class="fas fa-phone-alt"></i> ${doc.phone}</div><div class="contact-item"><i class="fas fa-envelope"></i> ${doc.email}</div></div><div class="detail-grid"><div class="detail-card"><div class="detail-label">📍 Location</div><div class="detail-value">${doc.location}</div></div><div class="detail-card"><div class="detail-label">⏳ Experience</div><div class="detail-value">${doc.experience}</div></div><div class="detail-card"><div class="detail-label">💰 Consultation</div><div class="detail-value">${doc.charges} / visit</div></div><div class="detail-card"><div class="detail-label">🩺 Availability</div><div class="detail-value">${doc.availability}</div></div></div><div><div class="detail-label">✨ Key Skills</div><div class="skill-pills">${skillsHtml}</div></div><div class="bio-text"><i class="fas fa-quote-left" style="margin-right:8px; color:var(--sakura-dark);"></i> ${doc.bio}</div>`; 
+  document.getElementById("profileModal").showModal(); 
+}
+
+function toggleBookmark(id, ev) { if(ev) ev.stopPropagation(); if(bookmarked.has(id)) bookmarked.delete(id); else bookmarked.add(id); filterAndRender(); showToast(bookmarked.has(id) ? "❤️ Saved to collection" : "Removed from saved", "info"); }
+function showToast(msg) { let t = document.getElementById("toast"); t.textContent = msg; t.classList.add("show"); setTimeout(()=>t.classList.remove("show"), 2500); }
+
+// Event listeners
+document.querySelectorAll(".spec-chip").forEach(el=>el.addEventListener("click",()=>{ document.querySelectorAll(".spec-chip").forEach(c=>c.classList.remove("active")); el.classList.add("active"); activeSpec = el.dataset.spec; filterAndRender(); }));
+document.getElementById("searchTriggerBtn").addEventListener("click", filterAndRender);
+document.getElementById("cityFilter").addEventListener("change", filterAndRender);
+document.getElementById("availFilter").addEventListener("change", filterAndRender);
+document.getElementById("ratingFilter").addEventListener("change", filterAndRender);
+document.getElementById("sortSelect").addEventListener("change", filterAndRender);
+document.getElementById("searchName").addEventListener("input", filterAndRender);
+document.getElementById("searchCityField").addEventListener("input", filterAndRender);
+document.getElementById("gridViewBtn").onclick = () => { viewMode="grid"; document.getElementById("gridViewBtn").classList.add("active"); document.getElementById("listViewBtn").classList.remove("active"); filterAndRender(); };
+document.getElementById("listViewBtn").onclick = () => { viewMode="list"; document.getElementById("listViewBtn").classList.add("active"); document.getElementById("gridViewBtn").classList.remove("active"); filterAndRender(); };
+document.getElementById("navBookmarkBtn").onclick = () => { let savedList = [...bookmarked].map(id=>doctorsList.find(d=>d.id===id)).filter(Boolean); document.getElementById("bookmarkModalBody").innerHTML = savedList.length ? savedList.map(d=>`<div style="display:flex; justify-content:space-between; align-items:center; background:#fef5ef; border-radius:28px; padding:16px; margin-bottom:12px;"><div><strong>${d.name}</strong><br>${d.role}</div><button onclick="toggleBookmark(${d.id}, event); document.getElementById('bookmarkModal').close();" style="background:#ffe2d4; border:none; border-radius:40px; padding:6px 18px;">Remove</button></div>`).join('') : "<div style='text-align:center; padding:32px;'>💫 No saved caregivers yet</div>"; document.getElementById("bookmarkModal").showModal(); };
+document.getElementById("closeProfileModal").onclick = () => document.getElementById("profileModal").close();
+document.getElementById("closeBookmarkModal").onclick = () => document.getElementById("bookmarkModal").close();
+document.getElementById("openAddBtn").onclick = () => document.getElementById("addModal").showModal();
+document.getElementById("closeAddModal").onclick = () => document.getElementById("addModal").close();
+document.getElementById("addForm").addEventListener("submit", (e)=>{ e.preventDefault(); let fd = new FormData(e.target); let newDoc = { id: Date.now(), name: fd.get("name"), role: fd.get("role")||"Caregiver", rating: 4.2, reviews: 0, location: fd.get("location")||"India", experience: "5 yrs", specialization: fd.get("spec")?fd.get("spec").split("|").map(s=>s.trim()):[], skills: [], availability: fd.get("availability"), charges: fd.get("charges")||"₹800", chargeNum: parseInt(fd.get("charges")?.replace(/[^0-9]/g,''))||800, phone: fd.get("phone"), email: fd.get("email"), photo: `https://randomuser.me/api/portraits/${Math.random()>0.5?'women':'men'}/${Math.floor(Math.random()*70)+10}.jpg`, bio: fd.get("bio")||"Compassionate healthcare expert" }; doctorsList.unshift(newDoc); updateStatsAndRender(); document.getElementById("addModal").close(); showToast(`✨ ${newDoc.name} added!`); e.target.reset(); });
+loadCSV();
+</script>
+</body>
+</html>
